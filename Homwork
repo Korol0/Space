@@ -1,0 +1,11 @@
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
+
+      e1.SetLogger(&Log.DefaultLogger{})
+
+// Set another logger as enforcer e2's logger.
+e2.SetLogger(&YouOwnLogger)
+
+// Set your logger when initializing enforcer e3.
+e3, _ := casbin.NewEnforcer("examples/rbac_model.conf", a, logger)
